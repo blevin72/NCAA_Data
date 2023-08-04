@@ -1,0 +1,110 @@
+﻿[
+  {//each opening curly bracket is the start of a new JSON object
+    "playerId": "4683234",
+    "player": "La'Vell Wright",
+    "team": "Kentucky",
+    "conference": "SEC",
+    "category": "rushing",
+    "statType": "YDS",
+    "stat": "10"
+  },
+  {
+    "playerId": "4426339",
+    "player": "Spencer Rattler",
+    "team": "South Carolina",
+    "conference": "SEC",
+    "category": "rushing",
+    "statType": "YDS",
+    "stat": "-12"
+  },
+  {
+    "playerId": "4875199",
+    "player": "Patrick Wilk",
+    "team": "Tennessee",
+    "conference": "SEC",
+    "category": "rushing",
+    "statType": "YDS",
+    "stat": "14"
+  },
+  {
+    "playerId": "4259553",
+    "player": "Stetson Bennett",
+    "team": "Georgia",
+    "conference": "SEC",
+    "category": "rushing",
+    "statType": "YPC",
+    "stat": "4.0"
+  },
+  {
+    "playerId": "4429133",
+    "player": "Malik Hornsby",
+    "team": "Arkansas",
+    "conference": "SEC",
+    "category": "rushing",
+    "statType": "TD",
+    "stat": "0"
+  },
+  {
+    "playerId": "4433945",
+    "player": "Elijah Young",
+    "team": "Missouri",
+    "conference": "SEC",
+    "category": "rushing",
+    "statType": "LONG",
+    "stat": "22"
+  },
+  {
+    "playerId": "4240858",
+    "player": "Hendon Hooker",
+    "team": "Tennessee",
+    "conference": "SEC",
+    "category": "rushing",
+    "statType": "CAR",
+    "stat": "5"
+  },
+  {
+    "playerId": "4685278",
+    "player": "Luther Burden III",
+    "team": "Missouri",
+    "conference": "SEC",
+    "category": "rushing",
+    "statType": "TD",
+    "stat": "1"
+  },
+  {
+    "playerId": "4429023",
+    "player": "MarShawn Lloyd",
+    "team": "South Carolina",
+    "conference": "SEC",
+    "category": "rushing",
+    "statType": "YDS",
+    "stat": "30"
+  },
+  {
+    "playerId": "4429012",
+    "player": "Kendall Milton",
+    "team": "Georgia",
+    "conference": "SEC",
+    "category": "rushing",
+    "statType": "TD",
+    "stat": "1"
+  },
+  {
+    "playerId": "4430841",
+    "player": "Carson Beck",
+    "team": "Georgia",
+    "conference": "SEC",
+    "category": "rushing",
+    "statType": "YPC",
+    "stat": "4.0"
+  },
+  {
+    "playerId": "4685278",
+    "player": "Luther Burden III",
+    "team": "Missouri",
+    "conference": "SEC",
+    "category": "rushing",
+    "statType": "LONG",
+    "stat": "17"
+  }
+]
