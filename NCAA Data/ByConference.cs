@@ -1,5 +1,4 @@
-﻿using System;
-using MyNamespace;
+﻿using MyNamespace;
 using Newtonsoft.Json.Linq;
 
 namespace NCAA_Data
@@ -28,11 +27,11 @@ namespace NCAA_Data
             Console.WriteLine("Which season would you like to see: regular, postseason, or both?"); //receiving user input
             var season = Console.ReadLine();
 
-            /*Creating a dictionary for the user to select what type of stat from each category
+            /*Creating a dictionary [statCategories] for the user to select what type of stat from each category
              user will choose from one of three dictionaries to access nested dictionaries*/
             Dictionary<string, Dictionary<string, List<string>>> statCategories = new Dictionary<string, Dictionary<string, List<string>>>
             {
-                {
+                {//main category = dictionary: offense
                     "offense", new Dictionary<string, List<string>>
                     {
                         { "rushing", new List<string> { "YDS", "TD", "CAR", "YPC", "LONG" } },
@@ -40,13 +39,13 @@ namespace NCAA_Data
                         { "receiving", new List<string> { "YDS", "TD", "REC", "YPR", "LONG", } }
                     }
                 },
-                {
+                {//main cateogry = dictionary: defense
                     "defense", new Dictionary<string, List<string>>
                     {
                         { "defensive", new List<string> { "INT", "QB HUR", "SACKS", "INT", "PD", "TFL", "TOT", "SOLO" } }
                     }
                 },
-                {
+                {//main category = dictionary: special teams
                     "special teams", new Dictionary<string, List<string>>
                     {
                         { "kicking", new List<string> { "FGM", "FGA", "XPM", "XPA", "PCT", "PTS", "" } },
@@ -63,6 +62,7 @@ namespace NCAA_Data
             if (statCategories.TryGetValue(mainCategory, out Dictionary<string, List<string>> statTypesDict))
             {
                 Console.WriteLine("Choose a stat category: " + string.Join(", ", statTypesDict.Keys));
+
                 var statCat = Console.ReadLine().ToLower();
 
                 if (statTypesDict.TryGetValue(statCat, out List<string> statTypes))
@@ -70,7 +70,7 @@ namespace NCAA_Data
                     Console.WriteLine("Choose a stat type: " + string.Join(", ", statTypes));
                     var selectedStatType = Console.ReadLine().ToUpper();
 
-                    var footballURL = $"https://api.collegefootballdata.com/stats/player/" +    //making the API call
+                    var footballURL = "https://api.collegefootballdata.com/stats/player/" +    //making the API call
                 $"season?year={year}&conference={conference}&seasonType={season}&category={statCat}"; //paramters include: year, conference, season, statType
 
                     Console.WriteLine();
@@ -96,4 +96,4 @@ namespace NCAA_Data
         }
     }
 }
-		
+

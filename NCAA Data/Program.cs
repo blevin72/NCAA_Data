@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
-namespace NCAA_Data
+﻿namespace NCAA_Data
 {
     internal class PlayerStatsAPI
     {
@@ -7,6 +6,7 @@ namespace NCAA_Data
         {
             ByConference byConference = new ByConference();
             byConference.SearchByConference();
+
         }
     }
 }
