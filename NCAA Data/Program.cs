@@ -29,11 +29,11 @@ namespace MyNamespace
             Console.WriteLine("Which season would you like to see: regular, postseason, or both?"); //receiving user input
             var season = Console.ReadLine();
 
-            /*Creating a dictionary for the user to select what type of stat from each category
+            /*Creating a dictionary [statCategories] for the user to select what type of stat from each category
              user will choose from one of three dictionaries to access nested dictionaries*/
             Dictionary<string, Dictionary<string, List<string>>> statCategories = new Dictionary<string, Dictionary<string, List<string>>>
             {
-                {
+                {//main category = dictionary: offense
                     "offense", new Dictionary<string, List<string>>
                     {
                         { "rushing", new List<string> { "YDS", "TD", "CAR", "YPC", "LONG" } },
@@ -41,15 +41,13 @@ namespace MyNamespace
                         { "receiving", new List<string> { "YDS", "TD", "REC", "YPR", "LONG", } }
                     }
                 },
-                {
+                {//main cateogry = dictionary: defense
                     "defense", new Dictionary<string, List<string>>
                     {
-                        { "tackles", new List<string> { "INT", "TFL", "TOT", "SOLO" } },
-                        { "rushing", new List<string> { "QB HUR", "SACKS" } },
-                        { "passing", new List<string> { "INT", "YDS", "PD" } }
+                        { "defensive", new List<string> { "INT", "QB HUR", "SACKS", "INT", "PD", "TFL", "TOT", "SOLO" } }
                     }
                 },
-                {
+                {//main category = dictionary: special teams
                     "special teams", new Dictionary<string, List<string>>
                     {
                         { "kicking", new List<string> { "FGM", "FGA", "XPM", "XPA", "PCT", "PTS", "" } },
@@ -66,6 +64,7 @@ namespace MyNamespace
             if (statCategories.TryGetValue(mainCategory, out Dictionary<string, List<string>> statTypesDict))
             {
                 Console.WriteLine("Choose a stat category: " + string.Join(", ", statTypesDict.Keys));
+
                 var statCat = Console.ReadLine().ToLower();
 
                 if (statTypesDict.TryGetValue(statCat, out List<string> statTypes))
