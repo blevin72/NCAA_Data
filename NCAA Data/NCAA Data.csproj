@@ -12,6 +12,16 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="Offense\" />
+    <None Remove="Special Teams\" />
+    <None Remove="Defense\" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="bin\Debug\net7.0\appsettings.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Offense\" />
+    <Folder Include="Special Teams\" />
+    <Folder Include="Defense\" />
   </ItemGroup>
 </Project>

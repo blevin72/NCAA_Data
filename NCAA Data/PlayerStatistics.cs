@@ -1,4 +1,4 @@
-﻿namespace MyNamespace
+﻿namespace NCAA_Data
 {
     public class PlayerStatistics
     {

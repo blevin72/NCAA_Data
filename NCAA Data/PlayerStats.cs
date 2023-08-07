@@ -1,7 +1,7 @@
 ﻿using System.Net.Http.Headers;
 using Newtonsoft.Json.Linq;
 
-namespace MyNamespace
+namespace NCAA_Data
 {
     public class PlayerStats
     {

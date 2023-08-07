@@ -1,23 +1,24 @@
-﻿using System;
-using MyNamespace;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 
 namespace NCAA_Data
 {
-	public class Rushing : Offense
+    public class Receiving : Base
     {
         private List<PlayerStatistics> filteredStats; // Declare filteredStats as a class-level variable
 
 
         public override void GetParameters()
         {
-            StatCat = "rushing";
+            StatCat = "receiving";
             base.GetParameters();
+
+            Console.WriteLine("Which receiving stat would you like to see: YDS, TD, REC, YPR, LONG");
+            StatType = Console.ReadLine().ToUpper();
         }
 
         public override async Task DisplayStatistics()
         {
-            string selectedCategory = "rushing";
+            string selectedCategory = "receiving";
             string key = File.ReadAllText("appsettings.json"); //reads the content (our API Key) from the "appsettings.json file; storing into the variable key
 
             string APIkey = JObject.Parse(key).GetValue("APIKey").ToString();
@@ -60,10 +61,10 @@ namespace NCAA_Data
                     Console.WriteLine($"Conference: {playerStats.Conference}");
                     Console.WriteLine($"Category: {playerStats.Category}");
                     Console.WriteLine($"Stat Type: {playerStats.StatType}");
-                    Console.WriteLine($"Result: {playerStats.Stat}");
+                    Console.WriteLine($"Result: {playerStats.Stat} {StatType}");
                     Console.WriteLine("------------------------------------------");
                 }
-                
+
             }
         }
     }

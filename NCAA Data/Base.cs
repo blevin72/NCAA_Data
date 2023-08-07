@@ -1,7 +1,7 @@
 ﻿using System;
 namespace NCAA_Data
 {
-	public abstract class Offense
+	public abstract class Base
 	{
         protected string StatCat { get; set; }
         protected int Year { get; set; }
@@ -21,9 +21,6 @@ namespace NCAA_Data
 
             Console.WriteLine("Which season would you like to see: regular, postseason, or both?");
             Season = Console.ReadLine();
-
-            Console.WriteLine("Which stat type would you like to see: YDS, TD, CAR, YPC, LONG");
-            StatType = Console.ReadLine().ToUpper();
         }
 		public abstract Task DisplayStatistics();
 	}
