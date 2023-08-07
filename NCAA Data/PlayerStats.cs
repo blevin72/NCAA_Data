@@ -5,11 +5,11 @@ namespace MyNamespace
 {
     public class PlayerStats
     {
-        public static async Task<List<PlayerStatistics>> GetRushingYardsAsync(string endPoint)
+        public static async Task<List<PlayerStatistics>> GetPlayerStats(string endPoint)
         {
             string key = File.ReadAllText("appsettings.json");  //reads the content (our API Key) from the "appsettings.json file; storing into the variable key
             string bearerToken = JObject.Parse(key).GetValue("APIKey").ToString();
-            double rushingYds = 0;
+            double rushingYards = 0;
 
             //Create a list to store player tatistics
             List<PlayerStatistics> playerStatsList = new List<PlayerStatistics>();
@@ -32,7 +32,7 @@ namespace MyNamespace
                         string responseBody = await response.Content.ReadAsStringAsync();
                         JArray responseArray = JArray.Parse(responseBody);
 
-                        foreach(JObject playerStats in responseArray)
+                        foreach (JObject playerStats in responseArray)
                         {
                             // Create a new PlayerStatistics object and fill its properties with data from the JSON.
                             PlayerStatistics playerStatistics = new PlayerStatistics
@@ -43,7 +43,7 @@ namespace MyNamespace
                                 Conference = (string)playerStats["conference"],
                                 Category = (string)playerStats["category"],
                                 StatType = (string)playerStats["statType"],
-                                RushingYards = (string)playerStats["stat"]
+                                Stat = (string)playerStats["stat"]
                             };
                             // Add the player statistics to the list.
                             playerStatsList.Add(playerStatistics);
